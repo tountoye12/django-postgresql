@@ -20,20 +20,14 @@ from . import views
 
 urlpatterns = [
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    path('employee', views.get_all_employee),
-    path('employee/add', views.add_user),
-    path("employee/get/<int:pk>/", views.get_employee),
-    path("employee/delete/<int:pk>/", views.delete_employee),
+    path('employees/', views.get_all_employee),
+    path('employees/add', views.add_user),
+    path("employees/get/<int:pk>/", views.get_employee),
+    path("employees/delete/<int:pk>/", views.delete_employee),
 
-    
-
-
-
-    path('group', views.get_all_group),
-    path('group/add', views.add_group),
-    path('group/get/<int:pk>/', views.get_group),
-    path('group/delete/<int:pk>/', views.delete_group),
-
-
+    path('groups', views.get_all_group),
+    path('groups/add', views.add_group),
+    path('groups/get/<int:pk>/', views.get_group),
+    path('groups/delete/<int:pk>/', views.delete_group),
     
 ]
