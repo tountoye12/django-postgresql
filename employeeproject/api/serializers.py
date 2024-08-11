@@ -2,17 +2,16 @@
 
 from rest_framework import serializers
 
-from  user.models import User, Group
+from  user.models import Employee, EmployeeGroup
 
-class UserSerializer(serializers.ModelSerializer):
-
+class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
+        model = Employee
         fields = '__all__'
 
 
 class GroupSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Group
+        model = EmployeeGroup
         fields = '__all__'
