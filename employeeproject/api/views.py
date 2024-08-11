@@ -33,6 +33,24 @@ def add_user(request):
 
 
 
+@api_view(["GET"])
+def get_employee(request, pk):
+    
+    employee = get_object_or_404(Employee, pk=pk)
+    employeeSerializer = EmployeeSerializer(employee)
+
+    return Response(employeeSerializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(["DELETE"])
+def delete_employee(request, pk):
+    
+    employee = get_object_or_404(Employee, pk=pk)
+    
+    employee.delete()
+
+    return Response({"msg": "Deleted"}, status=status.HTTP_200_OK)
+
 
 
 
