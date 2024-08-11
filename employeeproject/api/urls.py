@@ -1,8 +1,26 @@
 from django.urls import path, include
 
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+
+# schema_view = get_schema_view(
+
+#     openapi.Info(
+#         title = "Employee Api",
+#         default_version = 'v1',
+#         description="API documentation description",
+#     ), 
+#     public=True,
+#     permission_classes=[permissions.AllowAny]
+# )
+
 from . import views
 
 urlpatterns = [
-    path('', views.home),
-
+    #path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('', views.getAll),
+    path('add', views.addUser),
+    
 ]
