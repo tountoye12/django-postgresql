@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_docs',
     'api',
-    'user'
+    'user',
+    'drf_yasg',
     
 ]
 
