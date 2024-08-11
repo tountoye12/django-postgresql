@@ -15,7 +15,9 @@ class Employee(models.Model):
   email = models.EmailField()
   title = models.CharField(max_length=100)
   mobile = models.CharField(max_length=15)
-  photo = models.ImageField(upload_to='photos/', null=True, blank=True)
+  #photo = models.ImageField(upload_to='photos/', null=True, blank=True)
+  photo = models.CharField(max_length=200, null=True, blank=True)
+
   employee_groudId = models.ForeignKey(EmployeeGroup, on_delete= models.CASCADE)
 
 
